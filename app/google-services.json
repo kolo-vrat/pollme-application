@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "712504747289",
+    "project_id": "pollme-195c6",
+    "storage_bucket": "pollme-195c6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:712504747289:android:1a50b60d3c32934ad11188",
+        "android_client_info": {
+          "package_name": "com.aleksandar.pollme"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "712504747289-0oi8vuo9641duskgj1uc9hdfg2j89quc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCT6e3kOUzV7rplcbDciEkZrcjDd1tRJy4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "712504747289-0oi8vuo9641duskgj1uc9hdfg2j89quc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
