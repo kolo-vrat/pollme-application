@@ -3,75 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#F8CA83">
-    <LinearLayout
-        android:id="@+id/lytAdminButtons"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:background="#004AAD"
-        android:orientation="vertical"
-        android:padding="10dp"
-        android:visibility="gone">
+    android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/addpoll"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingVertical="15dp"
-            android:backgroundTint="#38B6FF"
-            android:text="Dodadi glasanje" />
-        <Button
-            android:id="@+id/openpolls"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#38B6FF"
-            android:text="Otvoreni glasanja" />
-        <Button
-            android:id="@+id/closedpolls"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#38B6FF"
-            android:text="Zatvoreni glasanja" />
-    </LinearLayout>
-    <ImageView
-        android:id="@+id/logo"
-        android:layout_width="160dp"
-        android:layout_height="160dp"
-        app:srcCompat="@drawable/poll_me_logo"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        tools:layout_editor_absoluteY="16dp" />
-
-    <EditText
-        android:id="@+id/adminPasswordLogin"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/logo"
-        android:layout_marginTop="40dp"
-        android:layout_marginHorizontal="30dp"
-        android:hint="Vnesi administratorska lozinka"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPassword" />
-
-    <android.widget.RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/adminPasswordLogin"
-        android:layout_marginTop="10dp"
-        android:layout_marginHorizontal="30dp"
-        android:layout_centerHorizontal="true">
-
-        <Button
-            android:id="@+id/login"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:backgroundTint="#38B6FF"
-            android:text="OK"
-            android:onClick="btnLoginOkClick" />
-    </android.widget.RelativeLayout>
+            android:layout_height="match_parent"
+            android:id="@+id/frLayout" />
 </android.widget.RelativeLayout>
