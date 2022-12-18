@@ -90,11 +90,7 @@ public class AddPollFragment extends Fragment {
                 EditText firstAnswer = new EditText(getActivity().getApplicationContext());
                 firstAnswer.setHint("Odgovor");
 
-                EditText secondAnswer = new EditText(getActivity().getApplicationContext());
-                secondAnswer.setHint("Odgovor");
-
                 answers.addView(firstAnswer);
-                answers.addView(secondAnswer);
 
                 Button addAnswer = new Button(getActivity().getApplicationContext());
                 addAnswer.setText("Dodadi odgovor");
@@ -130,7 +126,7 @@ public class AddPollFragment extends Fragment {
         btnAddPoll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                checkInput();
+                if (!checkInput()) return;
                 String title = pollTitle.getText().toString();
                 HashMap<String, HashMap<String,String>> questions = new HashMap<>();
                 int numQuestions = lytQuestions.getChildCount();
@@ -154,7 +150,7 @@ public class AddPollFragment extends Fragment {
                 database.child("polls").child(title).addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        Poll poll = new Poll(title, questions, startDate, secondsTillEnd);
+                        Poll poll = new Poll(title, questions, startDate, secondsTillEnd, null);
                         database.child("polls").child(title).setValue(poll);
 
                     }
@@ -169,17 +165,17 @@ public class AddPollFragment extends Fragment {
 
     }
 
-    private void checkInput() {
+    private boolean checkInput() {
         String title = pollTitle.getText().toString();
         if(title.length() == 0) {
             Toast.makeText(getActivity().getApplicationContext(), "Naslovot ne smee da bide prazen", Toast.LENGTH_LONG).show();
-            return;
+            return false;
         }
 
         String time = endTime.getText().toString();
         if(time.length() == 0) {
             Toast.makeText(getActivity().getApplicationContext(), "Vremetraenjeto ne smee da bide prazno", Toast.LENGTH_LONG).show();
-            return;
+            return false;
         }
 
 //        int numOptions = lytQuestions.getChildCount();
@@ -191,5 +187,6 @@ public class AddPollFragment extends Fragment {
 //                return;
 //            }
 //        }
+        return true;
     }
 }

@@ -56,6 +56,8 @@ public class AdministratorFragment extends Fragment {
         logo = (ImageView) getView().findViewById(R.id.logo);
         database = FirebaseDatabase.getInstance(DATABASE_NAME).getReference();
         btnAddPoll = (Button) getView().findViewById(R.id.addpoll);
+        btnOpenPolls = (Button) getView().findViewById(R.id.openpolls);
+        btnClosedPolls = (Button) getView().findViewById(R.id.closedpolls);
 
         btnOk.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,6 +98,22 @@ public class AdministratorFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Fragment fragment = new AddPollFragment();
+                ((AdministratorActivity) getActivity()).changeLayout(fragment);
+            }
+        });
+
+        btnOpenPolls.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Fragment fragment = new OpenPollsFragment();
+                ((AdministratorActivity) getActivity()).changeLayout(fragment);
+            }
+        });
+
+        btnClosedPolls.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Fragment fragment = new ClosedPollsFragment();
                 ((AdministratorActivity) getActivity()).changeLayout(fragment);
             }
         });
